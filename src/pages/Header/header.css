@@ -1,0 +1,26 @@
+header#main-header {
+    height: 53px;
+    border-bottom: 1px solid rgb(56, 68, 77);
+}
+
+header#main-header .header-content {
+    margin: 0 auto;
+    padding: 2px 22%;
+}
+
+header#main-header .header-title {
+    display: flex;
+}
+
+header h2 {
+    min-width: 0px;
+    line-height: 1.31;
+    color: rgb(255, 255, 255);
+    font-size: 19px;
+    font-weight: 800;
+}
+
+#logo {
+    height: 53px;
+    width: 53px;
+}

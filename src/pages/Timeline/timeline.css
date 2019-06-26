@@ -1,0 +1,54 @@
+.timeline {
+    padding: 0px;
+    color: rgb(255, 255, 255);
+}
+
+.timeline .timeline-item {
+    width: 50%;
+    border-bottom: 1px solid rgb(56, 68, 77);
+    border-left: 1px solid rgb(56, 68, 77);
+    border-right: 1px solid rgb(56, 68, 77);
+    border-radius: 14px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    padding-right: 50px;
+    padding-left: 50px;
+    flex-direction: row;
+    font-weight: 400;
+}
+
+.timeline .timeline-item-title {
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.timeline .timeline-item-author-date {
+    font-size: 13px;
+    color: rgb(136, 153, 166);
+}
+
+.timeline .timeline-item-description {
+    margin: 10px 0px;
+    font-weight: 400;
+    text-align: justify;
+}
+
+.timeline .timeline-item-image {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 1px solid rgb(56, 68, 77);
+    border-radius: 14px;
+}
+
+.timeline .timeline-item-image > img {
+    height: 100%;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    border-radius: 14px;
+}
