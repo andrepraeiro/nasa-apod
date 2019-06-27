@@ -10,20 +10,18 @@ export default class Timeline extends Component {
     }
 
     async componentDidMount() {
-
         const startDate = new Date()
         const endDate = new Date()
         endDate.setDate(endDate.getDate() - 10)
         const dateList = dateUtils.getDateArray(startDate, endDate)
-
-        this.setState({
-            data:
-                await Promise.all(dateList.map(async date => {
-                    const url = `apod?api_key=tD3fERSCXQRjRHfmAwtCN0E658aEj88YNWWOaq41&date=${dateUtils.formatDate(date)}`
-                    const response = await api.get(url)
-                    return response.data
-                }))
-        })
+        
+        dateList.map(async date => {
+            const url = `apod?api_key=tD3fERSCXQRjRHfmAwtCN0E658aEj88YNWWOaq41&date=${dateUtils.formatDate(date)}`
+            const response = await api.get(url)
+            this.setState({
+                data: [...this.state.data, response.data].sort((a, b) => new Date(b.date) - new Date(a.date))
+            })
+        })     
     }
 
     render() {
@@ -33,14 +31,15 @@ export default class Timeline extends Component {
                 {this.state.data.map(item => (
                     <article key={item.date} className="timeline-item">
                         <div className="timeline-item-title">{item.title}</div>
-                        <div className="timeline-item-author-date">{item.copyright}. {item.date}</div>
+                        <div className="timeline-item-author-date">
+                            {item.copyright ? item.copyright : 'Unknow author'} | {item.date}
+                        </div>
                         <div className="timeline-item-description">{item.explanation}</div>
                         <div className="timeline-item-image">
                             <img src={item.url} alt={item.title} />
                         </div>
                     </article>
-                )
-                )}
+                ))}
             </div>
         )
     }
