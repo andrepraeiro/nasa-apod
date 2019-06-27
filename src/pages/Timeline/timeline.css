@@ -1,6 +1,12 @@
 .timeline {
     padding: 0px;
     color: rgb(255, 255, 255);
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    overflow-y: auto;
 }
 
 .timeline .timeline-item {
@@ -15,12 +21,6 @@
     flex-direction: row;
     font-weight: 400;
     margin-bottom: 20px;
-    position: absolute;
-    top: 80px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    overflow-y: auto;
 }
 
 .timeline .timeline-item-title {
